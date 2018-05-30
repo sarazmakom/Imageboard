@@ -1,0 +1,45 @@
+* {
+    background: rgb(175, 241, 175);
+    font-family: monospace;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 20px 5px;
+    border: 1px solid black;
+    width: 75%;
+    font-size: 20px;
+}
+button {
+    background-color: rgb(14, 116, 24);
+    font-size: 20px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    width: 76%;
+}
+
+img {
+    border: black solid;
+    border-radius: 10%;
+    width: 200px;
+    height: 200px;
+}
+
+.position {
+    /* display: flex; */
+}
+.pics {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 20px;
+    margin: 5px;
+}

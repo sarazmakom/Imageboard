@@ -1,10 +1,37 @@
 <!doctype html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-    <title></title>
+    <meta charset="utf-8">
+    <title>Imageboard</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
+
+    <div id="main">
+            <div class="position">
+                <form>
+                    <input v-model="imgFormInfo.title" type="text" placeholder="title">
+                    <input v-model="imgFormInfo.description" type="text" placeholder="description">
+                    <input v-model="imgFormInfo.username" type="text" placeholder="username">
+                    <input v-on:change="selectFile" type="file">
+                    <button v-on:click="uploadImage">Upload image</buttom>
+                </form>
+            </div>
+
+            <div v-if="images.length > 0" v-for="image in images" class="pics">
+                    <img v-bind:src="image.url">
+                    <p>{{image.username}}</p>
+                    <p>{{image.title}}</p>
+                    <p>{{image.description}}</p>
+            </div>
+
+
+        </div>
+
+
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
