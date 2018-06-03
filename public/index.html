@@ -9,8 +9,8 @@
 <body>
 
     <div id="main">
-            <div class="position">
-                <form>
+            <div class="inputs">
+                <form >
                     <input v-model="imgFormInfo.title" type="text" placeholder="title">
                     <input v-model="imgFormInfo.description" type="text" placeholder="description">
                     <input v-model="imgFormInfo.username" type="text" placeholder="username">
@@ -19,15 +19,47 @@
                 </form>
             </div>
 
-            <div v-if="images.length > 0" v-for="image in images" class="pics">
-                    <img v-bind:src="image.url">
-                    <p>{{image.username}}</p>
-                    <p>{{image.title}}</p>
-                    <p>{{image.description}}</p>
+            <div>
+                    <image-modal
+                        v-if="currentImageId"
+                        v-bind:id="currentImageId"
+                        v-on:open="currentImageId"
+                        v-on:close="closeModal"
+                    ></image-modal>
             </div>
 
+            <div v-if="images.length > 0" v-for="image in images" class="yo">
+                    <a v-bind:href="'#' + image.id"><img v-bind:src="image.url"></a>
+                    <p>{{image.title}}</p>
+                    <p>{{image.description}}</p>
+                    <p>{{image.username}}</p>
+            </div>
+    </div>
 
+
+    <script id="tmpl" type="text/x-template">
+        <div class="outmodal">
+            <div class="modal">
+                <h3 class="close" v-on:click="close">x</h3>
+                    <img class="modal-image" v-bind:src="currentImageId.url">
+
+                    <p>{{currentImageId.title}}</p>
+                    <p>{{currentImageId.description}}</p>
+                    <p>{{currentImageId.username}}</p>
+
+                <input v-model="commentInfo.comment" type="text" name="comment" placeholder="comment">
+                <input v-model="commentInfo.username" type="text" name="username"  placeholder="username">
+                <button v-on:click="commentSubmit" type="button" name="button">Submit comment</button>
+                    <div  v-if="comments.length > 0">
+                        <div v-for="comment in comments">
+                                <h2>{{comment.comment}}</h2>
+                                <p>{{comment.username}}</p>
+                        </div>
+                    </div>
+            </div>
         </div>
+
+    </script>
 
 
     <script src="/js/vue.js"></script>
