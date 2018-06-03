@@ -82,7 +82,7 @@ app.post("/upload", uploader.single("file"), s3.upload, function(req, res) {
 //         });
 // });
 
-app.get("/images/:id", function(req, res) {
+app.get("/image/:id", function(req, res) {
     // Promise.all([
     //     db.getImageById(req.params.id),
     //     db.getCommentByImageId(req.params.id)

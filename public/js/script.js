@@ -92,7 +92,7 @@ Vue.component("image-modal", {
     mounted: function() {
         var me = this;
         axios.get("/image/" + this.id).then(function(result) {
-            me.currentImageId = result.data.currentImageId;
+            me.currentImageId = result.data;
         });
         axios.get("/comments/" + this.id).then(function(result) {
             me.comments = result.data;
