@@ -4,18 +4,24 @@
     <meta charset="utf-8">
     <title>Imageboard</title>
     <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada:700" rel="stylesheet">
+
 </head>
 
 <body>
-
+    <h1>Patrick Hruby illustrations</h1>
     <div id="main">
             <div class="inputs">
                 <form >
                     <input v-model="imgFormInfo.title" type="text" placeholder="title">
                     <input v-model="imgFormInfo.description" type="text" placeholder="description">
                     <input v-model="imgFormInfo.username" type="text" placeholder="username">
-                    <input v-on:change="selectFile" type="file">
+                    <div>
+                    <input v-on:change="selectFile" type="file" name="file" id="file" class="inputfile" />
+                    <label for="file">Choose a file</label>
+                    </div>
                     <button v-on:click="uploadImage">Upload image</buttom>
+
                 </form>
             </div>
 

@@ -33,7 +33,6 @@ new Vue({
         },
         closeModal: function() {
             this.currentImageId = null;
-            console.log("here", location.hash);
             location.hash = "";
         }
     },
@@ -48,6 +47,11 @@ new Vue({
         var me = this;
         axios.get("/images").then(function(response) {
             me.images = response.data.images;
+            document.addEventListener("keydown", function(e) {
+                if (e.keyCode == 27) {
+                    me.currentImageId = null;
+                }
+            });
         });
     }
 });

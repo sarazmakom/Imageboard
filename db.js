@@ -5,7 +5,7 @@ var db = spicedPg("postgres:postgres:postgres@localhost:5432/imageboard");
 exports.getImages = function() {
     return db.query(`SELECT * FROM images
                     ORDER BY id DESC
-                    LIMIT 12`);
+                    LIMIT 24`);
 };
 
 exports.uploadImage = function(url, username, title, description) {
