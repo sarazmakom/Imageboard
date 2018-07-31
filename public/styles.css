@@ -16,6 +16,10 @@ h1 {
     font-family: "Montserrat Subrayada", sans-serif;
 }
 
+h2 {
+  text-align: center;
+
+}
 form {
     margin: 0 auto;
 }
@@ -42,7 +46,7 @@ button {
     color: white;
     font-size: 1.5em;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     width: 62%;
 }
 
@@ -78,8 +82,9 @@ p {
 }
 
 .modal-image {
-    width: 30%;
-    height: 30%;
+    margin: 2em;
+    width: 40%;
+    height: 40%;
 }
 
 h3:hover {
@@ -96,7 +101,7 @@ h3 {
 
 .close {
     position: fixed;
-    top: 1em;
+    top: 0;
     right: 1em;
     color: black;
 }
@@ -129,4 +134,12 @@ h3 {
 
 .inputfile + label {
     cursor: pointer;
+}
+
+.comment {
+  width: 40%;
+}
+.submitcomm {
+  width: 41%;
+
 }

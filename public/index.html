@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <h1>Patrick Hruby illustrations</h1>
+    <h1>Amazing places on planet Earth</h1>
+    <h2>Upload your favourite images of amazing places on Earth </br> or comment on other people's uploaded images</h2>
     <div id="main">
             <div class="inputs">
-                <form >
+                <form>
                     <input v-model="imgFormInfo.title" type="text" placeholder="title">
-                    <input v-model="imgFormInfo.description" type="text" placeholder="description">
+                    <input v-model="imgFormInfo.description" type="text" placeholder="location">
                     <input v-model="imgFormInfo.username" type="text" placeholder="username">
                     <div>
                     <input v-on:change="selectFile" type="file" name="file" id="file" class="inputfile" />
                     <label for="file">Choose a file</label>
                     </div>
-                    <button v-on:click="uploadImage">Upload image</buttom>
-
+                    <button v-on:click="uploadImage">Upload image</button>
                 </form>
             </div>
 
@@ -53,9 +53,12 @@
                     <p>{{currentImageId.description}}</p>
                     <p>{{currentImageId.username}}</p>
 
-                <input v-model="commentInfo.comment" type="text" name="comment" placeholder="comment">
-                <input v-model="commentInfo.username" type="text" name="username"  placeholder="username">
-                <button v-on:click="commentSubmit" type="button" name="button">Submit comment</button>
+                <input v-model="commentInfo.comment" type="text" name="comment" placeholder="comment" class="comment">
+              </br>
+                <input v-model="commentInfo.username" type="text" name="username"  placeholder="username" class="comment">
+              </br>
+
+                <button v-on:click="commentSubmit" type="button" name="button" class="submitcomm">Submit comment</button>
                     <div  v-if="comments.length > 0">
                         <div v-for="comment in comments">
                                 <h2>{{comment.comment}}</h2>
@@ -64,9 +67,7 @@
                     </div>
             </div>
         </div>
-
     </script>
-
 
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>
